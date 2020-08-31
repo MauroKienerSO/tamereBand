@@ -3,6 +3,9 @@
 // Declare app level module which depends on views, and core components
 var tamere =  angular.module('tamere', ['ui.router', 'pascalprecht.translate']);
 
+tamere.run(['$rootScope', function($rootScope) {
+}]);
+
 tamere.config(['$stateProvider', '$urlRouterProvider', '$translateProvider', function($stateProvider, $urlRouterProvider, $translateProvider) {
 
     $stateProvider
@@ -14,6 +17,26 @@ tamere.config(['$stateProvider', '$urlRouterProvider', '$translateProvider', fun
         .state( {
             name: 'shows',
             url: "/shows",
+            component: 'shows',
+        })
+        .state( {
+            name: 'music',
+            url: "/music",
+            component: 'shows',
+        })
+        .state( {
+            name: 'videos',
+            url: "/videos",
+            component: 'shows',
+        })
+        .state( {
+            name: 'shop',
+            url: "/shop",
+            component: 'shows',
+        })
+        .state( {
+            name: 'contact',
+            url: "/contact",
             component: 'shows',
         })
 

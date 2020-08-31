@@ -7,4 +7,9 @@ body {
   -o-background-size: cover;
   background-size: cover;
   font-family: 'Cardo', serif;
+  color:white;
+}
+
+.navbar-home-image {
+  max-width: 5rem;
 }

@@ -1,3 +1,9 @@
 {
-  "i18n_ta_mere"                    : "Ta Mère"
+  "i18n_ta_mere"                    : "Ta Mère",
+  "Home"                            : "Home",
+  "Shows"                           : "Live",
+  "Music"                           : "Music",
+  "Videos"                          : "Videos",
+  "Shop"                            : "Shop",
+  "Contact"                         : "Contact"
 }
