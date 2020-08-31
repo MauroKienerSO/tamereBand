@@ -3,7 +3,12 @@
 // Declare app level module which depends on views, and core components
 var tamere =  angular.module('tamere', ['ui.router', 'pascalprecht.translate']);
 
-tamere.run(['$rootScope', function($rootScope) {
+tamere.run(['$transitions', function($transitions) {
+
+    // Hide Collapsible Navbar element on state change
+    $transitions.onSuccess({}, function(transition) {
+        $('#tamereNavbar').collapse('hide')
+    });
 
 }]);
 
