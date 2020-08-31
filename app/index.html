@@ -12,9 +12,6 @@
 </head>
 <body ng-app="tamere">
 
-  <a ui-sref="hello" ui-sref-active="active">Hello</a>
-  <a ui-sref="about" ui-sref-active="active">About</a>
-
   <ui-view></ui-view>
 
   <!-- In production use:
@@ -24,6 +21,11 @@
   <script src="lib/angularui/angular-ui-router.js"></script>
   <script src="lib/angular-translate/angular-translate.js"></script>
   <script src="lib/angular-translate/angular-translate-loader-static-files.js"></script>
+
+  <!--App root-->
   <script src="app.js"></script>
+  <script src="home/home.component.js"></script>
+
+
 </body>
 </html>

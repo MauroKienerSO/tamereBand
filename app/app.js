@@ -3,21 +3,16 @@
 // Declare app level module which depends on views, and core components
 var tamere =  angular.module('tamere', ['ui.router', 'pascalprecht.translate']);
 
-tamere.config(['$stateProvider', '$translateProvider', function($stateProvider, $translateProvider) {
-    var helloState = {
-        name: 'hello',
-        url: '/hello',
-        template: '<h3>hello world!</h3>'
-    }
+tamere.config(['$stateProvider', '$urlRouterProvider', '$translateProvider', function($stateProvider, $urlRouterProvider, $translateProvider) {
 
-    var aboutState = {
-        name: 'about',
-        url: '/about',
-        template: "<h3>{{'i18n_ta_mere' | translate}}</h3>"
-    }
+    $stateProvider
+        .state( {
+            name: 'home',
+            url: "/home",
+            component: 'home',
+        })
 
-    $stateProvider.state(helloState);
-    $stateProvider.state(aboutState);
+    $urlRouterProvider.otherwise('/home');
 
     $translateProvider.useStaticFilesLoader({
         prefix: 'i18n/tm.',
