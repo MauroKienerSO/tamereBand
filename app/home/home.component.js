@@ -2,9 +2,10 @@
 
 tamere.component('home', {
     templateUrl: 'home/home.component.template.html',
-    controller: ['$scope',
-        function HomeController($scope) {
+    controller: ['$scope', 'TamereNavigationService',
+        function HomeController($scope, tamereNavigationService) {
 
+            tamereNavigationService.setNavOption('Home');
         }
     ]
 });

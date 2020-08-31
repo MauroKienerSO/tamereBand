@@ -2,8 +2,10 @@
 
 tamere.component('shows', {
     templateUrl: 'shows/shows.component.template.html',
-    controller: ['$scope',
-        function ShowsController($scope) {
+    controller: ['$scope', 'TamereNavigationService',
+        function ShowsController($scope, tamereNavigationService) {
+
+            tamereNavigationService.setNavOption('Shows');
 
         }
     ]

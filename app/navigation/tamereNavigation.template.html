@@ -1,20 +1,16 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg tamere-main-navbar">
     <a class="navbar-brand" ui-sref="home">
         <img src="images/default_weiss.png" title="Logo Band Ta Mère" alt="Logo der Band Ta Mère" class="navbar-home-image">
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#tamereNavbar" aria-controls="tamereNavbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item" ng-repeat="option in navOptions" ng-class="{'active': option.active}">
-                <a class="nav-link" ui-sref="{{option.link}}" translate>{{option.title}}</a>
-            </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+    <div class="collapse navbar-collapse" id="tamereNavbar">
+        <div class="navbar-elements-container d-flex justify-content-lg-between flex-column flex-lg-row">
+            <div class="nav-item" ng-repeat="option in navOptions" ng-class="{'active': option.active}">
+                <a class="nav-link p-0" ui-sref="{{option.link}}" translate>{{option.title}}</a>
+            </div>
+        </div>
     </div>
 </nav>

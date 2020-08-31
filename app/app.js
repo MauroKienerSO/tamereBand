@@ -4,6 +4,7 @@
 var tamere =  angular.module('tamere', ['ui.router', 'pascalprecht.translate']);
 
 tamere.run(['$rootScope', function($rootScope) {
+
 }]);
 
 tamere.config(['$stateProvider', '$urlRouterProvider', '$translateProvider', function($stateProvider, $urlRouterProvider, $translateProvider) {
@@ -12,32 +13,32 @@ tamere.config(['$stateProvider', '$urlRouterProvider', '$translateProvider', fun
         .state( {
             name: 'home',
             url: "/home",
-            component: 'home',
+            component: 'home'
         })
         .state( {
             name: 'shows',
             url: "/shows",
-            component: 'shows',
+            component: 'shows'
         })
         .state( {
             name: 'music',
             url: "/music",
-            component: 'shows',
+            component: 'music'
         })
         .state( {
             name: 'videos',
             url: "/videos",
-            component: 'shows',
+            component: 'videos'
         })
         .state( {
             name: 'shop',
             url: "/shop",
-            component: 'shows',
+            component: 'shop'
         })
         .state( {
             name: 'contact',
             url: "/contact",
-            component: 'shows',
+            component: 'contact'
         })
 
     $urlRouterProvider.otherwise('/home');

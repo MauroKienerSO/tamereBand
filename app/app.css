@@ -1,4 +1,9 @@
 /* app css stylesheet */
+@font-face {
+  font-family: Ultra;
+  src: url("fonts/Ultra/Ultra.otf") format("opentype");
+}
+
 body {
   background: url('images/backgroundTM.jpg') no-repeat center center;
   background-attachment: fixed;
@@ -10,6 +15,39 @@ body {
   color:white;
 }
 
+a {
+ color: rgb(211, 230, 218);
+}
+a:hover, a:focus {
+  color: rgb(96, 166, 120)
+}
+
+/* Basic Image on HomePage for going to HomeTemplate */
 .navbar-home-image {
   max-width: 5rem;
 }
+
+/* Container for Nav-Element*/
+.navbar-elements-container {
+  width: 100%;
+}
+#tamereNavbar div.nav-item {
+  font-size: 1.4em;
+  font-weight: 800;
+  font-family: 'Ultra', serif;
+}
+#tamereNavbar div.nav-item.active a {
+  color: rgb(198, 127, 175);
+}
+#tamereNavbar a.nav-link {
+  float: right;
+}
+@media(min-width: 992px) {
+  #tamereNavbar div.nav-item {
+    font-size: 2em;
+  }
+  #tamereNavbar a.nav-link {
+    float: left;
+  }
+}
+
