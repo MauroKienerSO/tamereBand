@@ -11,6 +11,11 @@ tamere.config(['$stateProvider', '$urlRouterProvider', '$translateProvider', fun
             url: "/home",
             component: 'home',
         })
+        .state( {
+            name: 'shows',
+            url: "/shows",
+            component: 'shows',
+        })
 
     $urlRouterProvider.otherwise('/home');
 
