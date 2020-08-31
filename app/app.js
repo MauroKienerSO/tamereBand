@@ -7,7 +7,10 @@ tamere.run(['$transitions', function($transitions) {
 
     // Hide Collapsible Navbar element on state change
     $transitions.onSuccess({}, function(transition) {
-        $('#tamereNavbar').collapse('hide')
+        $('#tamereNavbar').collapse('hide');
+
+        // Disable the focus on the nav-links
+        $('#tamereNavbar a.nav-link').blur();
     });
 
 }]);
