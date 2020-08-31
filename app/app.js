@@ -1,9 +1,21 @@
 'use strict';
 
 // Declare app level module which depends on views, and core components
-angular.module('tamere', []).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  // $locationProvider.hashPrefix('!');
-  //
-  // $routeProvider.otherwise({redirectTo: '/view1'});
+var tamere =  angular.module('tamere', ['ui.router']);
+
+tamere.config(['$locationProvider', '$stateProvider', function($locationProvider, $stateProvider) {
+    var helloState = {
+        name: 'hello',
+        url: '/hello',
+        template: '<h3>hello world!</h3>'
+    }
+
+    var aboutState = {
+        name: 'about',
+        url: '/about',
+        template: '<h3>Its the UI-Router hello world app!</h3>'
+    }
+
+    $stateProvider.state(helloState);
+    $stateProvider.state(aboutState);
 }]);

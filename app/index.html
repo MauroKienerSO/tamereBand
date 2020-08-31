@@ -10,9 +10,12 @@
   <link rel="stylesheet" href="app.css">
   <script src="lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-<body>
+<body ng-app="tamere">
 
-  <div>Hello World</div>
+  <a ui-sref="hello" ui-sref-active="active">Hello</a>
+  <a ui-sref="about" ui-sref-active="active">About</a>
+
+  <ui-view></ui-view>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -20,10 +23,5 @@
   <script src="lib/angular/angular.js"></script>
   <script src="lib/angularui/angular-ui-router.js"></script>
   <script src="app.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
-  <script src="core/version/version.js"></script>
-  <script src="core/version/version-directive.js"></script>
-  <script src="core/version/interpolate-filter.js"></script>
 </body>
 </html>
