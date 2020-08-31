@@ -1,9 +1,9 @@
 'use strict';
 
 // Declare app level module which depends on views, and core components
-var tamere =  angular.module('tamere', ['ui.router']);
+var tamere =  angular.module('tamere', ['ui.router', 'pascalprecht.translate']);
 
-tamere.config(['$locationProvider', '$stateProvider', function($locationProvider, $stateProvider) {
+tamere.config(['$stateProvider', '$translateProvider', function($stateProvider, $translateProvider) {
     var helloState = {
         name: 'hello',
         url: '/hello',
@@ -13,9 +13,18 @@ tamere.config(['$locationProvider', '$stateProvider', function($locationProvider
     var aboutState = {
         name: 'about',
         url: '/about',
-        template: '<h3>Its the UI-Router hello world app!</h3>'
+        template: "<h3>{{'i18n_ta_mere' | translate}}</h3>"
     }
 
     $stateProvider.state(helloState);
     $stateProvider.state(aboutState);
+
+    $translateProvider.useStaticFilesLoader({
+        prefix: 'i18n/tm.',
+        suffix: '.json'
+    })
+    .preferredLanguage('de')
+    .use('de')
+    .fallbackLanguage('de')
+    .useSanitizeValueStrategy('escaped'); // escaped stellt Sonderzeichen und Umlaute aus den Übersetzungen richtig dar. ('sanitize' putzt die &'s raus)
 }]);
