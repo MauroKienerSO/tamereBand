@@ -1,13 +1,18 @@
 <div>Live Shows</div>
 
-<form name="showsForm">
-    <label for="date">When:</label>
-    <input id="date" moment-picker="show.date" ng-model="show.date" format="DD.MM.YYYY" name="date" today="true" placeholder="Select a Date">
-    <label for="place">Where:</label>
-    <input id="place" type="text" ng-model="show.place" name="place">
-    <label for="ticketUrl">TicketURL:</label>
-    <input id="ticketUrl" type="text" ng-model="show.ticketUrl" name="ticketUrl">
-    <input type="submit" ng-click="saveShow(show)" value="Save" />
+<form name="showsForm" class="float-right">
+    <md-input-container>
+        <md-datepicker ng-model="show.date" md-placeholder="Enter date"></md-datepicker>
+    </md-input-container>
+    <md-input-container>
+        <label for="place">Where:</label>
+        <input id="place" type="text" ng-model="show.place" name="place" autocomplete="off">
+    </md-input-container>
+    <md-input-container>
+        <label for="ticketUrl">TicketURL:</label>
+        <input id="ticketUrl" type="text" ng-model="show.ticketUrl" name="ticketUrl" autocomplete="off">
+    </md-input-container>
+    <md-button class="md-raised md-primary" ng-click="saveShow(show)">Save</md-button>
 </form>
 
 <ul>

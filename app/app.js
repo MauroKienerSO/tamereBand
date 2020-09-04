@@ -1,7 +1,7 @@
 'use strict';
 
 // Declare app level module which depends on views, and core components
-var tamere =  angular.module('tamere', ['ui.router', 'pascalprecht.translate', 'moment-picker']);
+var tamere =  angular.module('tamere', ['ui.router', 'pascalprecht.translate', 'ngAnimate', 'ngMessages', 'ngMaterial']);
 
 tamere.run(['$transitions', function($transitions) {
 
@@ -15,7 +15,7 @@ tamere.run(['$transitions', function($transitions) {
 
 }]);
 
-tamere.config(['$stateProvider', '$urlRouterProvider', '$translateProvider', function($stateProvider, $urlRouterProvider, $translateProvider) {
+tamere.config(['$stateProvider', '$urlRouterProvider', '$translateProvider', '$mdThemingProvider', function($stateProvider, $urlRouterProvider, $translateProvider, $mdThemingProvider) {
 
     $stateProvider
         .state( {
@@ -59,4 +59,8 @@ tamere.config(['$stateProvider', '$urlRouterProvider', '$translateProvider', fun
     .use('de')
     .fallbackLanguage('de')
     .useSanitizeValueStrategy('escaped'); // escaped stellt Sonderzeichen und Umlaute aus den Übersetzungen richtig dar. ('sanitize' putzt die &'s raus)
+
+    $mdThemingProvider.theme('default')
+        .primaryPalette('green')
+        .accentPalette('orange');
 }]);
