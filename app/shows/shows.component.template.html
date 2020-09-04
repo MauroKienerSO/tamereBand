@@ -1,9 +1,8 @@
 <div>Live Shows</div>
-<div moment-picker="myDate"> {{ myDate }} </div>
 
 <form name="showsForm">
     <label for="date">When:</label>
-    <input id="date" type="date" ng-model="show.date" name="date">
+    <input id="date" moment-picker="show.date" ng-model="show.date" format="DD.MM.YYYY" name="date" placeholder="Select a Date">
     <label for="place">Where:</label>
     <input id="place" type="text" ng-model="show.place" name="place">
     <label for="ticketUrl">TicketURL:</label>
