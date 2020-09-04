@@ -1,32 +1,53 @@
-<div>Live Shows</div>
+<div class="show-list container">
+    <div class="d-flex flex-column">
+        <div class="d-flex flex-row justify-content-between" ng-repeat="show in shows">
+            <div class="md-right">
+                {{ show.date | formatDate }}
+            </div>
+            <div class="flex-grow-1 venue">
+                {{ show.venue }}
+            </div>
+            <div class="float-right">
+                {{ show.city }}
+            </div>
+            <div>
+                {{ show.ticketUrl }}
+            </div>
+            <div>
+                <a class="delete" ng-click="deleteShow(show)">
+                    <span class="material-icons">
+                        clear
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 
-<form name="showsForm" class="float-right">
-    <md-input-container>
-        <md-datepicker ng-model="show.date" md-placeholder="Enter date"></md-datepicker>
-    </md-input-container>
-    <md-input-container>
-        <label for="place">Where:</label>
-        <input id="place" type="text" ng-model="show.place" name="place" autocomplete="off">
-    </md-input-container>
-    <md-input-container>
-        <label for="ticketUrl">TicketURL:</label>
-        <input id="ticketUrl" type="text" ng-model="show.ticketUrl" name="ticketUrl" autocomplete="off">
-    </md-input-container>
-    <md-button class="md-raised md-primary" ng-click="saveShow(show)">Save</md-button>
-</form>
+<md-divider></md-divider>
 
-<ul>
-    <li ng-repeat="show in shows">
-        {{ show.date | formatDate }}
-        {{ show.place }}
-        {{ show.ticketUrl }}
-        <a class="delete" ng-click="deleteShow(show)">
-            <span class="material-icons">
-                clear
-            </span>
-        </a>
-    </li>
-</ul>
+<div class="container add-show">
+    <form name="showsForm">
+        <md-input-container>
+            <md-datepicker ng-model="show.date" md-placeholder="Enter date"></md-datepicker>
+        </md-input-container>
+        <md-input-container>
+            <label for="venue">Place:</label>
+            <input id="venue" type="text" ng-model="show.venue" name="venue" autocomplete="off">
+        </md-input-container>
+        <md-input-container>
+            <label for="city">City:</label>
+            <input id="city" type="text" ng-model="show.city" name="city" autocomplete="off">
+        </md-input-container>
+        <md-input-container>
+            <label for="ticketUrl">TicketURL:</label>
+            <input id="ticketUrl" type="text" ng-model="show.ticketUrl" name="ticketUrl" autocomplete="off">
+        </md-input-container>
+        <md-button class="md-raised md-primary" ng-click="saveShow(show)">Save</md-button>
+    </form>
+
+</div>
+
 
 <div ng-if="message">{{ message }}</div>
 <div ng-if="error">{{ error }}</div>
