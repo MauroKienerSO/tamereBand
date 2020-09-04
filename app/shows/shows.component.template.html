@@ -2,7 +2,7 @@
 
 <form name="showsForm">
     <label for="date">When:</label>
-    <input id="date" moment-picker="show.date" ng-model="show.date" format="DD.MM.YYYY" name="date" placeholder="Select a Date">
+    <input id="date" moment-picker="show.date" ng-model="show.date" format="DD.MM.YYYY" name="date" today="true" placeholder="Select a Date">
     <label for="place">Where:</label>
     <input id="place" type="text" ng-model="show.place" name="place">
     <label for="ticketUrl">TicketURL:</label>
@@ -12,8 +12,9 @@
 
 <ul>
     <li ng-repeat="show in shows">
-        {{ show.date }}
+        {{ show.date | formatDate }}
         {{ show.place }}
+        {{ show.ticketUrl }}
     </li>
 </ul>
 
