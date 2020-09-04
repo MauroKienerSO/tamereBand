@@ -9,6 +9,7 @@
     "@uirouter/angularjs": "^1.0.28",
     "angular": "^1.7.5",
     "angular-loader": "^1.7.5",
+    "angular-moment-picker": "^0.10.2",
     "angular-route": "^1.7.5",
     "angular-translate": "^2.18.3",
     "html5-boilerplate": "0.0.1"

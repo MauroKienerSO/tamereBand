@@ -1,6 +1,22 @@
 <div>Live Shows</div>
+<div moment-picker="myDate"> {{ myDate }} </div>
 
-<button ng-click="saveShow()">Save Show</button>
+<form name="showsForm">
+    <label for="date">When:</label>
+    <input id="date" type="date" ng-model="show.date" name="date">
+    <label for="place">Where:</label>
+    <input id="place" type="text" ng-model="show.place" name="place">
+    <label for="ticketUrl">TicketURL:</label>
+    <input id="ticketUrl" type="text" ng-model="show.ticketUrl" name="ticketUrl">
+    <input type="submit" ng-click="saveShow(show)" value="Save" />
+</form>
+
+<ul>
+    <li ng-repeat="show in shows">
+        {{ show.date }}
+        {{ show.place }}
+    </li>
+</ul>
 
 <div ng-if="message">{{ message }}</div>
 <div ng-if="error">{{ error }}</div>

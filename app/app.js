@@ -1,7 +1,7 @@
 'use strict';
 
 // Declare app level module which depends on views, and core components
-var tamere =  angular.module('tamere', ['ui.router', 'pascalprecht.translate']);
+var tamere =  angular.module('tamere', ['ui.router', 'pascalprecht.translate', 'moment-picker']);
 
 tamere.run(['$transitions', function($transitions) {
 

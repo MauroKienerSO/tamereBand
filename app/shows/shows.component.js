@@ -5,6 +5,7 @@ tamere.component('shows', {
     controller: ['$scope', 'TamereNavigationService', 'ShowsService',
         function ShowsController($scope, tamereNavigationService, showsService) {
 
+            $scope.show = {};
             $scope.message;
             $scope.error;
 
@@ -14,16 +15,11 @@ tamere.component('shows', {
                 $scope.shows = shows;
             });
 
-            $scope.saveShow = function(){
-                var show = {
-                    id: 3,
-                    date: "20-01-2021",
-                    place: "Bierhübeli"
-                }
-
+            $scope.saveShow = function(show){
                 showsService.saveShow(show).then(function(message){
                     $scope.message = message;
                     $scope.shows.push(show);
+                    $scope.show = {};
                 }).catch(function(error){
                     $scope.error = error;
                 });
