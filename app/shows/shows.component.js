@@ -16,12 +16,28 @@ tamere.component('shows', {
             });
 
             $scope.saveShow = function(show){
-                showsService.saveShow(show).then(function(message){
-                    $scope.message = message;
-                    $scope.shows.push(show);
+                $scope.error = '';
+                $scope.message = '';
+
+                showsService.saveShow(show).then(function(responseData){
+                    $scope.message = responseData.message;
+                    $scope.shows.push(responseData.show);
                     $scope.show = {};
                 }).catch(function(error){
-                    $scope.error = error;
+                    $scope.error = error.message;
+                });
+            }
+
+            $scope.deleteShow = function(show){
+                $scope.error = '';
+                $scope.message = '';
+
+                showsService.deleteShow(show).then(function(responseData){
+                    $scope.message = responseData.message;
+                    var index = $scope.shows.indexOf(show);
+                    $scope.shows.splice(index, 1);
+                }).catch(function(error){
+                    $scope.error = error.message;
                 });
             }
         }

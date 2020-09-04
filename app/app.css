@@ -22,6 +22,10 @@ a:hover, a:focus {
   color: rgb(96, 166, 120)
 }
 
+a.delete {
+  cursor: pointer;
+}
+
 /* Basic Image on HomePage for going to HomeTemplate */
 .navbar-home-image {
   max-width: 5rem;

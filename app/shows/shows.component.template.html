@@ -15,6 +15,11 @@
         {{ show.date | formatDate }}
         {{ show.place }}
         {{ show.ticketUrl }}
+        <a class="delete" ng-click="deleteShow(show)">
+            <span class="material-icons">
+                clear
+            </span>
+        </a>
     </li>
 </ul>
 

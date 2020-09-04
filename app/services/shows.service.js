@@ -18,7 +18,7 @@ tamere.factory('ShowsService', ['$http', '$q', 'TamereConfigService', function($
                     tamereConfigService.defaultApiPath + '/api/shows'
                 ).then(function (response) {
                     self.shows = response.data.shows;
-                    defer.resolve(response.data.shows);
+                    defer.resolve(self.shows);
                 }).catch(function (error) {
                     defer.reject(error)
                 });
@@ -34,17 +34,27 @@ tamere.factory('ShowsService', ['$http', '$q', 'TamereConfigService', function($
                 tamereConfigService.defaultApiPath + '/api/shows',
                 show
             ).then(function (response) {
-                defer.resolve(response.data.message);
+                defer.resolve(response.data);
             }).catch(function (error) {
-                console.log(error);
-                defer.reject(error)
+                defer.reject(error.data)
             });
 
             return defer.promise;
         };
 
+        self.deleteShow = function(show){
+            var defer = $q.defer();
 
+            $http.delete(
+                tamereConfigService.defaultApiPath + '/api/shows/' + show._id,
+            ).then(function (response) {
+                defer.resolve(response.data);
+            }).catch(function (error) {
+                defer.reject(error.data)
+            });
 
+            return defer.promise;
+        };
 
     };
 
