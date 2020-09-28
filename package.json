@@ -26,6 +26,6 @@
     "update-deps": "npm update",
     "postupdate-deps": "npm run copy-libs",
     "copy-libs": "cpx \"node_modules/{angular,angular-*,angularui,html5-boilerplate/dist}/**/*\" app/lib -C",
-    "prestart": "npm install"
+    "prestart": "npm i -f"
   }
 }
