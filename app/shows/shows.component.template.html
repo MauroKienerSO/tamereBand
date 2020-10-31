@@ -1,3 +1,7 @@
+<div class="d-flex flex-column align-items-center">
+    <h1 class="page-header">Live</h1>
+</div>
+
 <div class="show-list container">
     <div class="d-flex flex-column">
         <div class="d-flex flex-row justify-content-between" ng-repeat="show in shows">
@@ -11,7 +15,7 @@
                 {{ show.city }}
             </div>
             <div>
-                {{ show.ticketUrl }}
+                <a href="{{ show.ticketUrl }}" target="_blank" title="Tickets zur Show">{{ show.ticketUrl }}</a>
             </div>
             <div>
                 <a class="delete" ng-click="deleteShow(show)">
