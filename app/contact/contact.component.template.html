@@ -1,3 +1,51 @@
 <div class="d-flex flex-column align-items-center">
     <h1 class="page-header">Contact</h1>
 </div>
+
+<div ng-if="formSubmitted" class="container d-flex flex-column align-items-center">
+    <div>
+        <h3>Thank you</h3>
+        <p>We have received your email and will respond as quickly as we can! Make sure to enjoy listening to our new album Plexian in the meantime!</p>
+    </div>
+</div>
+
+<div ng-if="error">{{ error }}</div>
+<md-content class="container" layout-padding>
+    <div>
+        <form name="userForm" ng-submit="sendMail(user, email)">
+
+            <div layout-gt-sm="row">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>First name</label>
+                    <input ng-model="user.firstName" required>
+                </md-input-container>
+
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Last name</label>
+                    <input ng-model="user.lastName">
+                </md-input-container>
+
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Email</label>
+                    <input ng-model="user.email" required>
+                </md-input-container>
+
+            </div>
+
+            <div layout-gt-sm="row">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Title</label>
+                    <input ng-model="email.title" required>
+                </md-input-container>
+            </div>
+
+            <md-input-container class="md-block">
+                <label>Message</label>
+                <textarea ng-model="email.message" md-maxlength="150" rows="5" md-select-on-focus required></textarea>
+            </md-input-container>
+
+            <md-button type="submit" class="float-right md-raised md-primary" ng-click="sendMail(user, email)" ng-disabled="userForm.$invalid">Send Message</md-button>
+
+        </form>
+    </div>
+</md-content>

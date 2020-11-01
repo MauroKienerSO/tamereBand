@@ -83,10 +83,6 @@ a.delete {
   border-bottom: 3px solid rgb(105, 165, 127);
 }
 
-.add-show {
-  background-color: rgba(203, 84, 161, 0.84);
-}
-
 .page-header {
   font-size: 90px;
   text-transform: uppercase;
