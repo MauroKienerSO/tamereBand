@@ -10,7 +10,7 @@
 }
 
 body {
-  background: url('images/backgroundTM.jpg') no-repeat center center;
+  background: url('images/webpage_background_black.svg') no-repeat center center;
   background-attachment: fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -20,12 +20,22 @@ body {
   color:white;
 }
 
+.container-header {
+  background-color: rgb(96, 166, 120) !important;
+  background: url('images/webpage_background_transparent.png') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: black;
+}
+
 h1, h2, h3, h4, h5, h6 {
   /*font-family: 'Neon', serif;*/
 }
 
 a {
- color: rgb(211, 230, 218);
+ color: white;
 }
 a:hover, a:focus {
   color: rgb(96, 166, 120)
@@ -50,7 +60,8 @@ a.delete {
   font-family: 'Ultra', serif;
 }
 #tamereNavbar div.nav-item.active a {
-  color: rgb(198, 127, 175);
+  /*color: rgb(198, 127, 175);*/
+  color: black;
 }
 #tamereNavbar a.nav-link {
   float: right;
@@ -86,4 +97,8 @@ a.delete {
 .page-header {
   font-size: 90px;
   text-transform: uppercase;
+}
+
+.tamere-main-navbar {
+  background-color: rgb(198, 127, 175);
 }
